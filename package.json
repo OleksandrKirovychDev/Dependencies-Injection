@@ -7,8 +7,8 @@
     "clean": "rm -rf ./dist && mkdir dist",
     "build:client": "webpack",
     "build:server": "tsc --build tsconfig.es5.json",
-    "dev:server": "yarn clean && yarn build:server && nodemon --watch dist dist/server/index.js",
-    "start": "concurrently \"yarn build:client\" \"yarn dev:server\""
+    "dev:server": "npm run build:server && nodemon --watch dist dist/server/index.js",
+    "start": "concurrently \"npm run build:client\" \"npm run dev:server\""
   },
   "keywords": [],
   "author": "",
